@@ -1,0 +1,1 @@
+# **Kafka Cluster, High Availability (HA) Architecture**

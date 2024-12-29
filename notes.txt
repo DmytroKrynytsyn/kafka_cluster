@@ -1,0 +1,5 @@
+/opt/kafka/bin/kafka-topics.sh --bootstrap-server 172.31.40.140:9092 --create --topic test --partitions 3 --replication-factor 3
+
+/opt/kafka/bin/kafka-console-producer.sh --bootstrap-server 172.31.40.140:9092 --topic test
+
+/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server 172.31.9.248:9092 --topic test --from-beginning

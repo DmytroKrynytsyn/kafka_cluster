@@ -1,0 +1,15 @@
+[Unit]
+Description=Apache Kafka Service
+After=network.target
+
+[Service]
+Environment="KAFKA_HEAP_OPTS=-Xms8g -Xmx12g"
+User={{ kafka_user }}
+Group={{ kafka_user }}
+ExecStart={{ install_dir }}/bin/kafka-server-start.sh {{ install_dir }}/config/kraft/server.properties
+ExecStop={{ install_dir }}/bin/kafka-server-stop.sh
+Restart=on-failure
+SyslogIdentifier=kafka
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+process.roles=broker,controller
+node.id={{ node_id }}
+log.dirs={{ data_dir }}
+listeners=PLAINTEXT://{{ private_ip }}:9092,CONTROLLER://{{ private_ip }}:9093
+controller.quorum.voters={{ controller_quorum_voters }}
+advertised.listeners=PLAINTEXT://{{ private_ip }}:9092
+listener.security.protocol.map=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+listener.roles=PLAINTEXT:broker,CONTROLLER:controller
+inter.broker.listener.name=PLAINTEXT
+controller.listener.names=CONTROLLER
+num.network.threads=3
+num.io.threads=8
+log.retention.hours=168
+log.segment.bytes=1073741824
+log.retention.check.interval.ms=300000
+zookeeper.connect=
